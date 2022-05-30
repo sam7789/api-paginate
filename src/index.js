@@ -9,9 +9,9 @@ app.use(express.json());
 
 app.get("/user", paginate(User), async (req, res) => {
   try {
-    return res.status(200).json(res.pagination);
+    return res.status(200).send(res.pagination);
   } catch (error) {
-    return res.status(500).json(error);
+    return res.status(500).send(error);
   }
 });
 
